@@ -1,0 +1,14 @@
+{#
+/*
+ *
+ * items: Rendered Items
+ *
+ */
+#}
+<section class="news-portada news-portada-destacado clearfix">
+  <div class="news-portada-content no-gutters">
+    {% for item in items %}
+      {{ item }}
+    {% endfor %}
+  </div>
+</section>

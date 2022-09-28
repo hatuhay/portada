@@ -1,0 +1,16 @@
+portada.config_form:
+  title: 'ConfigForm'
+  route_name: ovacion_portada.config_form
+  description: 'Configuracion de portada'
+  parent: system.admin_config_system
+  weight: 99
+
+
+# Taxonomia portada menu items definition
+entity.taxonomia_portada.collection:
+  title: 'Listados portada'
+  route_name: entity.taxonomia_portada.collection
+  description: 'Configurar listados de portada'
+  parent: system.admin_structure
+  weight: 99
+

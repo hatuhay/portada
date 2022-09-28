@@ -1,0 +1,45 @@
+{#
+/*
+ *
+ * items: Rendered Items
+ * title: Title for the group
+ * link: Link to the taxonomy term list
+ * ad: adserver ad code
+ * admiddle: adserver ad code
+ *
+ */
+#}
+{% if link matches '/^\\d+$/' %}
+  {% set uri = "/taxonomy/term/" ~ link %}
+{% else %}
+  {% set uri = "/videos" %}
+{% endif %}
+
+<section class="news-portada clearfix news-portada-{{ link }}">
+  <div class="container">
+    {{ ad|raw }}
+    {% for item in items %}
+      {% if loop.first %}
+        <div class="videos-portada-destacado row">
+          <img src="/sites/default/files/logo-tv.svg" alt="Inicio" class="img-fluid d-inline-block d-sm-none align-top logo-top logo">
+          {{ item }}
+          <div class="col-sm-6 col-md-4">
+            <img src="/sites/default/files/logo-tv.svg" alt="Inicio" class="img-fluid d-none d-sm-inline-block align-top logo-right logo">
+            <div class="block-simple-ad-code">
+            <!-- Revive Adserver Etiqueta JS asincrónica - Generated with Revive Adserver v4.1.4 -->
+            <ins data-revive-zoneid="192" data-revive-id="2976ba624bc75843d4901f7507fb71cb"></ins></div>
+          </div>
+        </div>
+        <div class="videos-portada-content row">
+      {% else %}
+          {{ item }}
+      {% endif %}
+      {% if loop.last %}
+        </div>
+      {% endif %}
+    {% endfor %}
+    <div class="news-portada-footer">
+      <a class="view-more btn btn-secondary float-right" href="{{ uri }}">Ver todo</a>
+    </div>
+  </div>
+</section>

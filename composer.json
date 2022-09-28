@@ -1,0 +1,14 @@
+{
+  "name": "drupal/ovacion_portada",
+  "type": "drupal-module",
+  "description": "Listados de portada Ovacion",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/ovacion_portada",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/ovacion_portada",
+    "source": "http://cgit.drupalcode.org/ovacion_portada"
+  },
+  "require": { }
+}

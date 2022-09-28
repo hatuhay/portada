@@ -1,0 +1,27 @@
+ovacion_portada.taxonomia_portada.*:
+  type: config_entity
+  label: 'Taxonomia portada config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    active:
+      type: int
+      label: 'Activo'
+    ad_middle:
+      type: string
+      label: 'Ad Middle'
+    ad_end:
+      type: string
+      label: 'Ad End'
+    ad_end_responsive:
+      type: string
+      label: 'Ad End Responsive'
+    weight:
+      type: int
+      label: 'Weight'
+    uuid:
+      type: string

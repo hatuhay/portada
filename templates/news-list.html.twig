@@ -1,0 +1,31 @@
+{#
+/*
+ *
+ * items: Rendered Items
+ * title: Title for the group
+ * link: Link to the taxonomy term list
+ * ad: adserver ad code
+ *
+ */
+#}
+{% if link matches '/^\\d+$/' %}
+  {% set uri = "/taxonomy/term/" ~ link %}
+{% else %}
+  {% set uri = "/videos" %}
+{% endif %}
+
+<section class="news-portada clearfix news-portada-{{ link }}">
+  <div class="container">
+    {{ ad|raw }}
+    {{ ad_responsive|raw }}
+    <div class="news-portada-header">
+      <h2><a href="{{ uri }}">{{ title }}</a></h2>
+      <a class="view-more" href="{{ uri }}">Ver todo</a>
+    </div>
+    <div class="news-portada-content">
+      {% for item in items %}
+        {{ item }}
+      {% endfor %}
+    </div>
+  </div>
+</section>

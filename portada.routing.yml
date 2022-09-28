@@ -1,0 +1,58 @@
+
+portada.config_form:
+  path: '/admin/config/portada/config'
+  defaults:
+    _form: '\Drupal\ortada\Form\ConfigForm'
+    _title: 'ConfigForm'
+  requirements:
+    _permission: 'edit portada'
+  options:
+    _admin_route: TRUE
+
+portada.page_controller_front:
+  path: '/front'
+  defaults:
+    _controller: '\Drupal\portada\Controller\PageController::front'
+    _title: 'Ovación Corporación Deportiva'
+  requirements:
+    _permission: 'access content'
+
+portada.page_controller_noticias:
+  path: '/noticias'
+  defaults:
+    _controller: '\Drupal\portada\Controller\PageController::noticias'
+    _title: 'Noticias'
+  requirements:
+    _permission: 'access content'
+
+portada.page_controller_videos:
+  path: '/videos'
+  defaults:
+    _controller: '\Drupal\portada\Controller\PageController::videos'
+    _title: 'Videos'
+  requirements:
+    _permission: 'access content'
+
+portada.page_controller_taxonomy:
+  path: '/taxonomy/term/{term_id}'
+  defaults:
+    _controller: '\Drupal\portada\Controller\PageController::taxonomy'
+    _title: 'Taxonomy Term'
+  requirements:
+    _permission: 'access content'
+
+portada.page_controller_estadisticas:
+  path: '/estadisticas/{option}/{view}/{p}'
+  defaults:
+    _controller: '\Drupal\portada\Controller\PageController::estadisticas'
+    _title: 'Estadísticas'
+  requirements:
+    _permission: 'access content'
+
+portada.page_controller_estadisticas_extra:
+  path: '/estadisticas/{option}/{view}/{p}/{type}/{id}'
+  defaults:
+    _controller: '\Drupal\portada\Controller\PageController::estadisticas_extra'
+    _title: 'Estadísticas'
+  requirements:
+    _permission: 'access content'

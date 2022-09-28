@@ -1,0 +1,6 @@
+entity.taxonomia_portada.add_form:
+  route_name: entity.taxonomia_portada.add_form
+  title: 'Add Taxonomia portada'
+  appears_on:
+    - entity.taxonomia_portada.collection
+

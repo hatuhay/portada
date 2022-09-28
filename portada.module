@@ -1,0 +1,88 @@
+<?php
+
+/**
+ * @file
+ * Contains portada.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function portada_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the portada module.
+    case 'help.page.portada':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Listados de portada') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function portada_theme() {
+  return [
+    'news_item' => [
+      'variables' => [
+        'children' => NULL,
+        'classes' => 'col',
+      ]
+    ],
+    'news_list' => [
+      'variables' => [
+        'items' => [],
+        'title' => NULL,
+        'link' => NULL,
+        'ad' => NULL,
+        'ad_responsive' => NULL,
+        'admiddle' => NULL,
+      ]
+    ],
+    'news_group' => [
+      'variables' => [
+        'children' => NULL,
+      ]
+    ],
+    'news_taxonomy' => [
+      'variables' => [
+        'items' => [],
+      ]
+    ],
+    'news_destacado_front' => [
+      'variables' => [
+        'items' => [],
+      ]
+    ],
+    'videos_list' => [
+      'variables' => [
+        'items' => [],
+        'title' => NULL,
+        'link' => NULL,
+        'ad' => NULL,
+      ]
+    ],
+    'estadisticas' => [
+      'variables' => [
+        'option' => NULL,
+        'view' => NULL,
+        'p' => NULL,
+        'type' => NULL,
+        'id' => NULL,
+      ]
+    ],
+  ];
+}
+
+function get_taxonomy_terms($vid) {
+  $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+  foreach ($terms as $term) {
+    $term_data[$term->tid] = $term->name;
+  }
+  return $term_data;
+}
